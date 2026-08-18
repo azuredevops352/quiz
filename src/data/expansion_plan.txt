@@ -1,0 +1,28 @@
+# Question Bank Expansion Plan
+
+## Current Status
+- Need to expand each category to exactly 20 questions (total 220)
+- 11 categories with varying current counts
+
+## Expansion Strategy
+- Maintain existing question structure: id, answer, optional acceptedAnswers, category, difficulty, 5 clues ordered hard→easy
+- Distribute difficulties roughly 6-7 per level within each category
+- Ensure progressive difficulty (very hard → very easy) in clues
+- No duplicate answers within same category
+
+## Current Distribution
+People: 10 questions (Easy:3, Medium:4, Hard:3) - Need 10 more
+Places: 6 questions (Easy:1, Medium:3, Hard:2) - Need 14 more
+Animals: 8 questions (Easy:2, Medium:3, Hard:3) - Need 12 more
+Food: 10 questions (Easy:4, Medium:4, Hard:2) - Need 10 more
+Technology: 6 questions (Medium:3, Hard:3) - Need 14 more
+Companies: 7 questions (Medium:5, Hard:2) - Need 13 more
+Movies: 6 questions (Easy:2, Medium:2, Hard:2) - Need 14 more
+Sports: 6 questions (Easy:1, Medium:1, Hard:4) - Need 14 more
+History: 8 questions (Hard:4, Medium:4) - Need 12 more
+Science: 6 questions (Medium:4, Hard:2) - Need 14 more
+Objects: 7 questions (Easy:2, Medium:2, Hard:3) - Need 13 more
+
+## Target Distribution (Approximate)
+Categories with 6-7 per level: 10, 11, 12, or 13 per level
+Categories with uneven current distribution: balance toward 6-7 per level

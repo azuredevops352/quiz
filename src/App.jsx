@@ -4,13 +4,13 @@ import QuestionScreen from './components/five-clues/QuestionScreen';
 import ResultsScreen from './components/five-clues/ResultsScreen';
 import { gameStateReducer, INITIAL_STATE } from './game/gameState';
 import { questions } from './data/questions';
-import { QUESTIONS_PER_GAME } from './game/gameLogic';
+import { QUESTIONS_PER_GAME, ALL_CATEGORIES, ALL_DIFFICULTIES } from './game/gameLogic';
 
 const App = () => {
   const [state, dispatch] = useReducer(gameStateReducer, INITIAL_STATE);
 
-  const handleStartGame = () => {
-    dispatch({ type: 'START_GAME', questionBank: questions, questionsPerGame: QUESTIONS_PER_GAME });
+  const handleStartGame = (selectedCategory = ALL_CATEGORIES, selectedDifficulty = ALL_DIFFICULTIES) => {
+    dispatch({ type: 'START_GAME', questionBank: questions, questionsPerGame: QUESTIONS_PER_GAME, selectedCategory, selectedDifficulty });
   };
 
   const handleSubmitAnswer = (userInput) => {
@@ -28,7 +28,7 @@ const App = () => {
   if (state.gameStatus === 'start') {
     return (
       <div className="app">
-        <StartScreen onStart={handleStartGame} />
+        <StartScreen onStart={handleStartGame} categories={questions} selectedCategory={state.selectedCategory} selectedDifficulty={state.selectedDifficulty} />
       </div>
     );
   }

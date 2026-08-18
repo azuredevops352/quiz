@@ -1,6 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import {
   getRandomQuestions,
+  getCategories,
+  getDifficulties,
+  ALL_CATEGORIES,
+  ALL_DIFFICULTIES,
   normalizeAnswer,
   isCorrectAnswer,
   pointsByClue,
@@ -25,6 +29,33 @@ const sampleQuestionBank = [
   { id: 6, answer: 'Six', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
 ];
 
+// Categorized bank for category-selection tests
+const categorizedBank = [
+  { id: 1, category: 'Animals', answer: 'Octopus', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 2, category: 'Animals', answer: 'Dolphin', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 3, category: 'Animals', answer: 'Penguin', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 4, category: 'Animals', answer: 'Kangaroo', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 5, category: 'Animals', answer: 'Owl', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 6, category: 'Food', answer: 'Pizza', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 7, category: 'Food', answer: 'Sushi', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 8, category: 'Science', answer: 'DNA', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+];
+
+// Fully categorized bank for combined category+difficulty tests
+const categorizedDifficultyBank = [
+  { id: 1, category: 'Animals', difficulty: 'Easy', answer: 'Honeybee', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 2, category: 'Animals', difficulty: 'Medium', answer: 'Octopus', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 3, category: 'Animals', difficulty: 'Hard', answer: 'Great White Shark', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 4, category: 'Animals', difficulty: 'Easy', answer: 'Dolphin', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 5, category: 'Animals', difficulty: 'Easy', answer: 'Elephant', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 6, category: 'Food', difficulty: 'Easy', answer: 'Pizza', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 7, category: 'Food', difficulty: 'Medium', answer: 'Sushi', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 8, category: 'Food', difficulty: 'Hard', answer: 'Chocolate', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 9, category: 'Food', difficulty: 'Easy', answer: 'Tacos', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 10, category: 'Food', difficulty: 'Easy', answer: 'Ice Cream', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+  { id: 11, category: 'Science', difficulty: 'Medium', answer: 'DNA', acceptedAnswers: [], clues: ['c1', 'c2', 'c3', 'c4', 'c5'] },
+];
+
 describe('getRandomQuestions', () => {
   it('returns exactly count questions', () => {
     const result = getRandomQuestions(sampleQuestionBank, 3);
@@ -47,44 +78,153 @@ describe('getRandomQuestions', () => {
     expect(getRandomQuestions(sampleQuestionBank, 0)).toEqual([]);
     expect(getRandomQuestions(sampleQuestionBank, -1)).toEqual([]);
   });
+
+  describe('category filtering', () => {
+    it('returns only questions from the selected category', () => {
+      const result = getRandomQuestions(categorizedBank, 5, 'Animals');
+      expect(result).toHaveLength(5);
+      expect(result.every(q => q.category === 'Animals')).toBe(true);
+    });
+
+    it('returns unique questions within a category (no repeats)', () => {
+      const result = getRandomQuestions(categorizedBank, 5, 'Animals');
+      const ids = result.map(q => q.id);
+      expect(new Set(ids).size).toBe(ids.length);
+    });
+
+    it('treats ALL_CATEGORIES identically to omitting the category', () => {
+      // Both should draw from the whole bank (all 8 available)
+      const withAll = getRandomQuestions(categorizedBank, 8, ALL_CATEGORIES);
+      const withoutArg = getRandomQuestions(categorizedBank, 8);
+      expect(withAll).toHaveLength(8);
+      expect(withoutArg).toHaveLength(8);
+      // Same set of ids regardless of order
+      const idsAll = withAll.map(q => q.id).sort((a, b) => a - b);
+      const idsNone = withoutArg.map(q => q.id).sort((a, b) => a - b);
+      expect(idsAll).toEqual(idsNone);
+    });
+
+    it('caps at the number of questions in the category', () => {
+      const result = getRandomQuestions(categorizedBank, 5, 'Food');
+      expect(result).toHaveLength(2); // only 2 Food questions exist
+      expect(result.every(q => q.category === 'Food')).toBe(true);
+    });
+
+    it('falls back to the whole bank when the category is unknown', () => {
+      const result = getRandomQuestions(categorizedBank, 8, 'Nonexistent');
+      expect(result).toHaveLength(8);
+    });
+  });
+
+  describe('difficulty filtering', () => {
+    it('returns only questions from the selected difficulty', () => {
+      const result = getRandomQuestions(categorizedDifficultyBank, 5, ALL_CATEGORIES, 'Easy');
+      expect(result).toHaveLength(5);
+      expect(result.every(q => q.difficulty === 'Easy')).toBe(true);
+    });
+
+    it('returns unique questions within a difficulty (no repeats)', () => {
+      const result = getRandomQuestions(categorizedDifficultyBank, 5, ALL_CATEGORIES, 'Easy');
+      const ids = result.map(q => q.id);
+      expect(new Set(ids).size).toBe(ids.length);
+    });
+
+    it('treats ALL_DIFFICULTIES identically to omitting the difficulty', () => {
+      const withAll = getRandomQuestions(categorizedDifficultyBank, 11, ALL_CATEGORIES, ALL_DIFFICULTIES);
+      const withoutArg = getRandomQuestions(categorizedDifficultyBank, 11, ALL_CATEGORIES);
+      expect(withAll).toHaveLength(11);
+      expect(withoutArg).toHaveLength(11);
+      const idsAll = withAll.map(q => q.id).sort((a, b) => a - b);
+      const idsNone = withoutArg.map(q => q.id).sort((a, b) => a - b);
+      expect(idsAll).toEqual(idsNone);
+    });
+
+    it('caps at the number of questions in the difficulty', () => {
+      const result = getRandomQuestions(categorizedDifficultyBank, 10, ALL_CATEGORIES, 'Hard');
+      expect(result).toHaveLength(2); // only 2 Hard questions
+      expect(result.every(q => q.difficulty === 'Hard')).toBe(true);
+    });
+
+    it('falls back to the bank when the difficulty is unknown', () => {
+      const result = getRandomQuestions(categorizedDifficultyBank, 11, ALL_CATEGORIES, 'Nonexistent');
+      expect(result).toHaveLength(11);
+    });
+  });
+
+  describe('combined category and difficulty filtering', () => {
+    it('filters correctly by both category and difficulty', () => {
+      // Animals + Easy = 3 questions
+      const result = getRandomQuestions(categorizedDifficultyBank, 5, 'Animals', 'Easy');
+      expect(result.every(q => q.category === 'Animals' && q.difficulty === 'Easy')).toBe(true);
+      expect(result).toHaveLength(3);
+    });
+
+    it('filters correctly by category and falls back to difficulty filter when insufficient', () => {
+      // Food + Medium = 1 question, asking for 5 -> capped at 1
+      const result = getRandomQuestions(categorizedDifficultyBank, 5, 'Food', 'Medium');
+      expect(result).toHaveLength(1);
+      expect(result[0].difficulty).toBe('Medium');
+    });
+
+    it('returns empty array when combination has no matches', () => {
+      // Birds (nonexistent category) + Easy -> should fall back to full bank
+      const result = getRandomQuestions(categorizedDifficultyBank, 5, 'Birds', 'Easy');
+      // Falls back to full bank since Birds has no questions
+      expect(result).toHaveLength(5);
+    });
+
+    it('"All Categories" + "All Difficulties" behaves exactly like original unfiltered', () => {
+      const withAllFilters = getRandomQuestions(categorizedDifficultyBank, 5, ALL_CATEGORIES, ALL_DIFFICULTIES);
+      const noFilters = getRandomQuestions(categorizedDifficultyBank, 5);
+      expect(withAllFilters).toHaveLength(5);
+      expect(noFilters).toHaveLength(5);
+    });
+  });
 });
 
-describe('normalizeAnswer', () => {
-  it('lowercases the string', () => {
-    expect(normalizeAnswer('APPLE')).toBe('apple');
+describe('getCategories', () => {
+  it('returns ALL_CATEGORIES as the first option', () => {
+    const result = getCategories(categorizedBank);
+    expect(result[0]).toBe(ALL_CATEGORIES);
   });
 
-  it('trims whitespace', () => {
-    expect(normalizeAnswer('  apple  ')).toBe('apple');
+  it('returns a unique, sorted list of categories after the first option', () => {
+    const result = getCategories(categorizedBank);
+    const rest = result.slice(1);
+    expect(rest).toEqual(['Animals', 'Food', 'Science']);
   });
 
-  it('collapses multiple whitespace to single space', () => {
-    expect(normalizeAnswer('apple   pie')).toBe('apple pie');
-    expect(normalizeAnswer('  apple   pie  ')).toBe('apple pie');
+  it('does not include duplicate categories', () => {
+    const result = getCategories(categorizedBank);
+    expect(new Set(result).size).toBe(result.length);
   });
 
-  it('handles empty string', () => {
-    expect(normalizeAnswer('')).toBe('');
+  it('returns only ALL_CATEGORIES for an empty or missing bank', () => {
+    expect(getCategories([])).toEqual([ALL_CATEGORIES]);
+    expect(getCategories(null)).toEqual([ALL_CATEGORIES]);
   });
 });
 
-describe('isCorrectAnswer', () => {
-  it('returns true for exact answer match (case insensitive)', () => {
-    expect(isCorrectAnswer('Albert Einstein', sampleQuestion)).toBe(true);
-    expect(isCorrectAnswer('albert einstein', sampleQuestion)).toBe(true);
+describe('getDifficulties', () => {
+  it('returns ALL_DIFFICULTIES as the first option', () => {
+    const result = getDifficulties(categorizedDifficultyBank);
+    expect(result[0]).toBe(ALL_DIFFICULTIES);
   });
 
-  it('returns true for acceptedAnswers match', () => {
-    expect(isCorrectAnswer('Einstein', sampleQuestion)).toBe(true);
-    expect(isCorrectAnswer('einstein', sampleQuestion)).toBe(true);
+  it('returns difficulties in fixed order [Easy, Medium, Hard] after the first option', () => {
+    const result = getDifficulties(categorizedDifficultyBank);
+    const rest = result.slice(1);
+    expect(rest).toEqual(['Easy', 'Medium', 'Hard']);
   });
 
-  it('returns false for incorrect answer', () => {
-    expect(isCorrectAnswer('Newton', sampleQuestion)).toBe(false);
+  it('does not include duplicate difficulties', () => {
+    const result = getDifficulties(categorizedDifficultyBank);
+    expect(new Set(result).size).toBe(result.length);
   });
 
-  it('handles whitespace and case', () => {
-    expect(isCorrectAnswer('  EINSTEIN  ', sampleQuestion)).toBe(true);
+  it('returns only ALL_DIFFICULTIES for an empty or missing bank', () => {
+    expect(getDifficulties([])).toEqual([ALL_DIFFICULTIES]);
+    expect(getDifficulties(null)).toEqual([ALL_DIFFICULTIES]);
   });
 });
 

@@ -1,122 +1,241 @@
 export const questions = [
-  {
-    id: 1,
-    answer: 'Albert Einstein',
-    acceptedAnswers: ['Einstein'],
-    clues: [
-      'His brain was removed during autopsy and studied for decades',
-      'He failed his first entrance exam to the Swiss Federal Polytechnic',
-      'He won the Nobel Prize in Physics in 1921 for the photoelectric effect',
-      'His famous equation is E = mc²',
-      'He developed the theory of relativity'
-    ]
-  },
-  {
-    id: 2,
-    answer: 'Mount Everest',
-    acceptedAnswers: ['Everest', 'Chomolungma', 'Sagarmatha'],
-    clues: [
-      'It was originally named Peak XV by surveyors',
-      'The first confirmed summit was in 1953 by Hillary and Norgay',
-      'It grows about 4mm taller each year due to tectonic activity',
-      'The "death zone" above 8,000m has insufficient oxygen for sustained human life',
-      'It is the highest mountain above sea level on Earth at 8,848.86 meters'
-    ]
-  },
-  {
-    id: 3,
-    answer: 'Octopus',
-    acceptedAnswers: ['octopi'],
-    clues: [
-      'It has three hearts and blue blood',
-      'It can regenerate lost arms completely',
-      'It is a master of camouflage, changing color and texture instantly',
-      'It has no bones and can squeeze through tiny openings',
-      'It is a highly intelligent cephalopod with eight arms'
-    ]
-  },
-  {
-    id: 4,
-    answer: 'Pizza',
-    acceptedAnswers: ['pizza'],
-    clues: [
-      'The first pizzeria in the US opened in NYC in 1905',
-      'The Margherita was named after Queen Margherita of Savoy in 1889',
-      'It originated as a poor person\'s street food in Naples',
-      'The word likely comes from Latin "pinsere" meaning to pound or crush',
-      'It is a flatbread topped with tomato sauce, cheese, and various ingredients'
-    ]
-  },
-  {
-    id: 5,
-    answer: 'iPhone',
-    acceptedAnswers: ['iPhone', 'Apple iPhone'],
-    clues: [
-      'The first model had no copy/paste, no 3G, and no App Store',
-      'Steve Jobs unveiled it as "a phone, an iPod, and an internet communicator"',
-      'It popularized the multi-touch capacitive touchscreen',
-      'It runs iOS and is made by Apple',
-      'It was first released in 2007 and revolutionized the smartphone industry'
-    ]
-  },
-  {
-    id: 6,
-    answer: 'Google',
-    acceptedAnswers: ['Google', 'Alphabet'],
-    clues: [
-      'Its original name was "BackRub"',
-      'The name comes from "googol" (1 followed by 100 zeros)',
-      'Its first server was housed in LEGO bricks',
-      'Its motto was once "Don\'t be evil"',
-      'It was founded in 1998 by Larry Page and Sergey Brin'
-    ]
-  },
-  {
-    id: 7,
-    answer: 'The Godfather',
-    acceptedAnswers: ['The Godfather', 'Godfather'],
-    clues: [
-      'Marlon Brando stuffed his cheeks with cotton for the screen test',
-      'The cat in the opening scene was a stray found on the Paramount lot',
-      'The famous line "I\'m gonna make him an offer he can\'t refuse" was improvised',
-      'It won Best Picture at the 45th Academy Awards',
-      'It is a 1972 crime epic directed by Francis Ford Coppola'
-    ]
-  },
-  {
-    id: 8,
-    answer: 'Soccer',
-    acceptedAnswers: ['Soccer', 'Football', 'Association Football'],
-    clues: [
-      'The World Cup trophy was stolen in 1966 and found by a dog named Pickles',
-      'A match once caused a war between Honduras and El Salvador in 1969',
-      'The Laws of the Game were first codified in 1863 in England',
-      'It is played with a spherical ball between two teams of eleven players',
-      'It is the world\'s most popular sport with over 4 billion fans'
-    ]
-  },
-  {
-    id: 9,
-    answer: 'The Great Wall of China',
-    acceptedAnswers: ['Great Wall', 'Great Wall of China'],
-    clues: [
-      'It cannot be seen from space with the naked eye despite the myth',
-      'Glutinous rice flour was used in the mortar for later sections',
-      'It was built by multiple dynasties over 2,000+ years',
-      'Its total length with all branches exceeds 21,000 km',
-      'It is a series of fortifications built across northern China'
-    ]
-  },
-  {
-    id: 10,
-    answer: 'DNA',
-    acceptedAnswers: ['DNA', 'Deoxyribonucleic Acid'],
-    clues: [
-      'If uncoiled, the DNA in one human cell would stretch about 2 meters',
-      'Humans share about 50% of DNA with bananas',
-      'Its double helix structure was discovered by Watson, Crick, Franklin, and Wilkins',
-      'It contains the genetic instructions for all known living organisms',
-      'It is a molecule composed of two polynucleotide chains forming a double helix'
-    ]
-  }
+  // ==================== PEOPLE (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 1,  category: 'People', difficulty: 'Easy',    answer: 'Albert Einstein',                 acceptedAnswers: ['Einstein', 'Albert Einstein'], clues: ['His brain was studied after death', 'He failed Swiss exam', 'Nobel 1921', 'E=mc2', 'Relativity theory'] },
+  { id: 2,  category: 'People', difficulty: 'Easy',    answer: 'Marie Curie',                     acceptedAnswers: ['Curie', 'Marie Curie'], clues: ['Only two-science Nobel winner', 'Discovered polonium and radium', 'Radioactive notebooks', 'First female Sorbonne professor', 'Radioactivity pioneer'] },
+  { id: 3,  category: 'People', difficulty: 'Easy',    answer: 'Leonardo da Vinci',               acceptedAnswers: ['Leonardo', 'Da Vinci'], clues: ['Mirror writing', 'Flying machine design', 'Mona Lisa', 'Fewer than 20 works', 'Polymath: painter inventor anatomist'] },
+  { id: 4,  category: 'People', difficulty: 'Easy',    answer: 'Nelson Mandela',                  acceptedAnswers: ['Mandela', 'Nelson Mandela'], clues: ['Prisoner 46664', 'HIV campaign', 'Nobel 1993', 'First Black president', '27 years prison'] },
+  { id: 5,  category: 'People', difficulty: 'Easy',    answer: 'Martin Luther King Jr.',          acceptedAnswers: ['MLK', 'Martin Luther King Jr.'], clues: ['I Have a Dream 1963', 'Youngest Nobel 1964', 'Assassination Memphis 1968', 'US federal holiday', 'Civil rights leader'] },
+  { id: 6,  category: 'People', difficulty: 'Easy',    answer: 'Galileo Galilei',                  acceptedAnswers: ['Galileo', 'Galileo Galilei'], clues: ['Improved telescope observations', 'Supported heliocentrism', 'Discovered Jupiters moons', 'House arrest by Church', 'Italian astronomer physicist'] },
+
+  { id: 7,  category: 'People', difficulty: 'Medium', answer: 'Cleopatra',                        acceptedAnswers: ['Cleopatra', 'Cleopatra VII'], clues: ['Last Ptolemaic ruler Egyptian', 'Allied with Julius Caesar', 'Allied with Mark Antony', 'Defeated at Battle of Actium', 'Suicide by asp after defeat'] },
+  { id: 8,  category: 'People', difficulty: 'Medium', answer: 'William Shakespeare',               acceptedAnswers: ['Shakespeare', 'The Bard'], clues: ['Sonnets 154 poetic sequence', 'Tragedies include Hamlet Othello', 'Comedies include Midsummer A Midsummer Night\'s Dream', 'Histories about English kings', 'Died Stratford-upon-Avon 1616'] },
+  { id: 9,  category: 'People', difficulty: 'Medium', answer: 'Leonardo da Vinci',                acceptedAnswers: ['Leonardo', 'Da Vinci'], clues: ['Mona Lisa enigmatic smile', 'The Last Supper mural', 'Vitruvian Man drawing', 'Inventor designed flying machine', 'Worked for Milan Florence Rome'] },
+  { id: 10, category: 'People', difficulty: 'Medium', answer: 'Marie Curie',                     acceptedAnswers: ['Curie', 'Marie Curie'], clues: ['Nobel Prizes in Physics Chemistry', 'Discovered polonium radium', 'Radioactive isotopes research', 'First woman Nobel laureate', 'Died from radiation exposure'] },
+  { id: 11, category: 'People', difficulty: 'Medium', answer: 'Albert Einstein',                 acceptedAnswers: ['Einstein', 'Albert Einstein'], clues: ['Theory of relativity E=mc2', 'Nobel Prize 1921 Physics', 'Became Berlin professor', 'Refused Nobel for relativity', 'Emigrated to USA 1933'] },
+  { id: 12, category: 'People', difficulty: 'Medium', answer: 'Isaac Newton',                    acceptedAnswers: ['Newton', 'Sir Isaac Newton'], clues: ['Principia Mathematica 1687', 'Laws of motion three principles', 'Universal gravitation theory', 'Calculus co-inventor', 'President Royal Society'] },
+  { id: 13, category: 'People', difficulty: 'Medium', answer: 'Charles Darwin',                  acceptedAnswers: ['Darwin', 'Charles Darwin'], clues: ['Origin of Species 1859', 'Evolution by natural selection', 'Galápagos Islands finches study', 'Beagle voyage aboard HMS Beagle', 'Devon born England'] },
+
+  { id: 14, category: 'People', difficulty: 'Hard',    answer: 'Mahatma Gandhi',                  acceptedAnswers: ['Gandhi', 'Mahatma'], clues: ['Quit India Movement 1942', 'Fast for Hindu-Muslim unity', 'Gandhi birthday national holiday', 'Born Porbandar 1869', 'Assassinated 1948'] },
+  { id: 15, category: 'People', difficulty: 'Hard',    answer: 'Nelson Mandela',                  acceptedAnswers: ['Mandela', 'Nelson Mandela'], clues: ['African National Congress leader', 'Treason charges in Rivonia Trial', 'Negotiated end of apartheid', 'President 1994-1999', 'HIV advocacy campaign'] },
+  { id: 16, category: 'People', difficulty: 'Hard',    answer: 'Leonardo da Vinci',                acceptedAnswers: ['Leonardo', 'Leonardo'], clues: ['Notebooks filled with inventions', 'Mona Lisa painted 1503-1519', 'The Last Supper 1495-1498', ' worked for Duke of Milan', 'Bible illustrations for Ludovico Sforza'] },
+  { id: 17, category: 'People', difficulty: 'Hard',    answer: 'Pablo Picasso',                   acceptedAnswers: ['Picasso', 'Pablo Picasso'], clues: ['Blue Period melancholic art', 'Rose Period circus subjects', 'Co-founded Cubism movement', 'Guernica painted Spanish Civil War', 'Worked with Georges Braque'] },
+  { id: 18, category: 'People', difficulty: 'Hard',    answer: 'Vincent van Gogh',                acceptedAnswers: ['Van Gogh', 'Vincent van Gogh'], clues: ['Provence sunflower paintings', 'Starry Night 1889', 'Mental health struggles', 'Died in asylum 1890', 'Sold one painting in lifetime'] },
+  { id: 19, category: 'People', difficulty: 'Hard',    answer: 'Michelangelo',                    acceptedAnswers: ['Michelangelo', 'Michelangelo Buonarroti'], clues: ['Sistine Chapel ceiling frescoes', 'David marble sculpture', 'Pietà marble tomb sculpture', 'Poet and artist', 'Born Tuscan Rome 1475'] },
+  { id: 20, category: 'People', difficulty: 'Hard',    answer: 'Rembrandt Harmenszoon',            acceptedAnswers: ['Rembrandt', 'Rembrandt van Rijn'], clues: ['The Night Watch group portrait', 'Self-portraits series', '1642- Amsterdam Golden Age', 'Bankruptcy forced move to southern Holland', 'Etching master technique'] },
+
+  // ==================== PLACES (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 21, category: 'Places', difficulty: 'Easy',    answer: 'Amazon Rainforest',               acceptedAnswers: ['Amazon', 'Amazon Rainforest'], clues: ['Produces 20 percent worlds oxygen', 'Spans nine countries seventy Brazil', 'Three hundred ninety billion trees', 'Largest tropical rainforest five point five million km2', 'Contains ten percent known species'] },
+  { id: 22, category: 'Places', difficulty: 'Easy',    answer: 'Grand Canyon',                    acceptedAnswers: ['Grand Canyon', 'The Grand Canyon'], clues: ['Exposes two billion years geology', 'Carved by Colorado River', 'Width varies six hundred to twenty-nine km', 'US National Park 1919', 'Located in Arizona'] },
+  { id: 23, category: 'Places', difficulty: 'Easy',    answer: 'Eiffel Tower',                    acceptedAnswers: ['Eiffel', 'Eiffel Tower'], clues: ['Built 1889 Worlds Fair Gustave Eiffel', '330 meters tall', 'Wrought iron lattice tower', 'Paris most visited monument', 'Three levels open public'] },
+  { id: 24, category: 'Places', difficulty: 'Easy',    answer: 'Sydney Opera House',              acceptedAnswers: ['Sydney Opera House', 'Sydney Operahouse'], clues: ['UNESCO World Heritage Site', 'Journal Utzon design', 'Over one thousand six hundred performances yearly', 'White sail-like shells', 'Opened 1973 Sydney Australia'] },
+  { id: 25, category: 'Places', difficulty: 'Easy',    answer: 'Great Barrier Reef',              acceptedAnswers: ['Great Barrier Reef'], clues: ['World largest coral reef system', 'Over two thousand three hundred reefs', 'Visible outer space', 'Fifteen hundred fish species thirty whales dolphins', 'Threatened coral bleaching climate change'] },
+  { id: 26, category: 'Places', difficulty: 'Easy',    answer: 'Mount Everest',                   acceptedAnswers: ['Everest', 'Mount Everest'], clues: ['Highest point eight thousand eight hundred forty-eight meters', 'Himalayas mountain range', 'First summit Edmund Hillary Tenzing Norgay', 'Growing slowly tectonic plates', 'Death zone above eight thousand meters low oxygen'] },
+
+  { id: 27, category: 'Places', difficulty: 'Medium', answer: 'Machu Picchu',                      acceptedAnswers: ['Machu Picchu'], clues: ['Inca citadel built 15th century', 'Hidden from Spanish conquistadors', 'Altitude two thousand four hundred thirty meters', 'Named by Hiram Bingham1911', 'Peruvian Andes location'] },
+  { id: 28, category: 'Places', difficulty: 'Medium', answer: 'Mount Fuji',                      acceptedAnswers: ['Fuji', 'Mount Fuji'], clues: ['Japan most iconic volcano', 'Stratovolcano active but dormant', 'Sacred Shinto shrine summit', 'Illuminated by cherry blossoms', 'Symmetry popular artistic subject'] },
+  { id: 29, category: 'Places', difficulty: 'Medium', answer: 'Great Wall of China',               acceptedAnswers: ['Great Wall', 'Chinese Great Wall'], clues: ['Built multiple dynasties over two thousand years', 'Over twenty thousand kilometers total length', 'Watchtowers signal system', 'Ming dynasty most well-preserved sections', 'UNESCO World Heritage Site'] },
+  { id: 30, category: 'Places', difficulty: 'Medium', answer: 'Galapagos Islands',                 acceptedAnswers: ['Galapagos', 'Galapagos Islands'], clues: ['Charles Darwin evolutionary studies', 'Unique endemic species giant tortoises', 'Volcanic origin archipelago', 'Marine reserve since1998', 'Charles Darwin Research Station'] },
+  { id: 31, category: 'Places', difficulty: 'Medium', answer: 'Niagara Falls',                   acceptedAnswers: ['Niagara Falls'], clues: ['Horseshoe Falls largest in volume', 'Border of Canada United States', 'Maid of the Mist boat tour', 'Whirlpool rapids downstream', 'Geological formation Niagara Escarpment'] },
+  { id: 32, category: 'Places', difficulty: 'Medium', answer: 'Uluru',                           acceptedAnswers: ['Uluru', 'Ayers Rock'], clues: ['Australia largest monolith rock', 'Sacred to Anangu people', 'Changed name Ayers Rock back to Uluru 1985', 'Red color iron oxide coating', 'Visible from eight hundred kilometers away'] },
+  { id: 33, category: 'Places', difficulty: 'Medium', answer: 'Christ the Redeemer',             acceptedAnswers: ['Christ the Redeemer', 'Christ statue'], clues: ['Statue Rio de Janeiro Brazil', 'Salt giant statue arms span twenty metres', 'Built 1922-1931 over Copacabana', 'Art Deco style design', 'UNESCO World Heritage Site'] },
+
+  { id: 34, category: 'Places', difficulty: 'Hard',   answer: 'Amazon River',                    acceptedAnswers: ['Amazon', 'Amazon River'], clues: ['Second longest river system', 'Flows through Amazon rainforest', 'Mouth forms massive estuary', 'Over one thousand one hundred tributaries', 'Biodiversity hotspot freshwater'] },
+  { id: 35, category: 'Places', difficulty: 'Hard',   answer: 'Dead Sea',                        acceptedAnswers: ['Dead Sea', 'Sea of Lot'], clues: ['Land point four hundred thirty meters below sea level', 'Saltiest body water twenty percent salt', 'Floating easy due to high density', 'Borders Jordan Israel Palestine', 'Therapeutic mud treatments ancient remedy'] },
+  { id: 36, category: 'Places', difficulty: 'Hard',   answer: 'Sahara Desert',                     acceptedAnswers: ['Sahara', 'Sahara Desert'], clues: ['Largest hot desert on Earth', 'Covers nine point two million km2', 'Sahara means desert in Arabic', 'Experienced green periods past humid climate', 'Home Tuareg nomads culture'] },
+  { id: 37, category: 'Places', difficulty: 'Hard',   answer: 'Antarctica',                       acceptedAnswers: ['Antarctica'], clues: ['Coldest driest continent', 'Ice sheet three kilometers thick', 'South Pole located on continent', 'Treaty system prevents territorial claims', 'Penguins only naturally found here'] },
+  { id: 38, category: 'Places', difficulty: 'Hard',   answer: 'Great Barrier Reef',              acceptedAnswers: ['Great Barrier Reef'], clues: ['World largest coral reef system', 'Over two thousand three hundred reefs', 'Visible outer space from low earth orbit', 'Fifteen hundred fish species thirty whales dolphins', 'Threatened by coral bleaching climate change'] },
+  { id: 39, category: 'Places', difficulty: 'Hard',   answer: 'Mount Vesuvius',                  acceptedAnswers: ['Vesuvius', 'Mount Vesuvius'], clues: ['Active stratovolcano Italy', 'Erupted 79 AD buried Pompeii', 'Located on Campanian Arc', 'Dangerous potential future eruption', 'Part of Bay of Naples volcanic zone'] },
+  { id: 40, category: 'Places', difficulty: 'Hard',   answer: 'Krakatoa',                          acceptedAnswers: ['Krakatoa', 'Krakatau'], clues: ['Indonesian archipelago volcanic island', 'Erupted 1883 caused global climate effects', 'Explosion heard thirty hundred kilometers away', 'Island reduced to five islets', 'Tsunami waves crossed Indian Ocean'] },
+
+  // ==================== ANIMALS (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 41, category: 'Animals', difficulty: 'Easy',    answer: 'Giraffe',                     acceptedAnswers: ['Giraffe'], clues: ['Tallest mammal long neck', 'Spots unique pattern', 'Can go weeks without water', 'Male fights necking', 'Heart pumps three hundred times per minute'] },
+  { id: 42, category: 'Animals', difficulty: 'Easy',    answer: 'Octopus',                     acceptedAnswers: ['Octopus', 'Octopi'], clues: ['Three hearts blue blood', 'Regenerates arms', 'Master camouflage changes', 'No bones squeeze spaces', 'Highly intelligent cephalopod'] },
+  { id: 43, category: 'Animals', difficulty: 'Easy',    answer: 'Eagle',                       acceptedAnswers: ['Eagle'], clues: ['King of birds', 'Sharp vision', 'Powerful talons', 'Soars high skies', 'Carnivorous hunter'] },
+  { id: 44, category: 'Animals', difficulty: 'Easy',    answer: 'Honeybee',                    acceptedAnswers: ['Honey bee', 'Bee'], clues: ['Communicates food via waggle dance', 'Visits two million flowers for one pound honey', 'Stinger kills bee', 'Social insect in colony', 'Can recognize human faces'] },
+  { id: 45, category: 'Animals', difficulty: 'Easy',    answer: 'African Elephant',              acceptedAnswers: ['Elephant', 'African Elephant'], clues: ['Largest land animal', 'Trunk with forty thousand muscles', 'Can recognize self mirror', 'Mourns dead herd members', 'Weighs up to six thousand kg'] },
+  { id: 46, category: 'Animals', difficulty: 'Easy',    answer: 'Penguin',                       acceptedAnswers: ['Penguin'], clues: ['Flightless bird southern hemisphere', 'Waddle land swim flipper', 'Monogamous partners', 'Black white camouflage', 'Huddle warm cold'] },
+
+  { id: 47, category: 'Animals', difficulty: 'Medium', answer: 'Peregrine Falcon',                acceptedAnswers: ['Peregrine', 'Falcon'], clues: ['Fastest animal 320 km/h dive', 'Survived near extinction DDT', 'Nests on cliffs skyscrapers', 'Strikes prey clenched foot', 'Found globally except Antarctica'] },
+  { id: 48, category: 'Animals', difficulty: 'Medium', answer: 'Blue Whale',                    acceptedAnswers: ['whale', 'blue whale'], clues: ['Largest animal ever', 'Heart size of a small car', 'Found in Antarctic waters', 'Travels in groups called pods', 'Sings complex songs'] },
+  { id: 49, category: 'Animals', difficulty: 'Medium', answer: 'Sea Turtle',                    acceptedAnswers: ['Sea Turtle', 'Marine Turtle'], clues: ['Can hold breath five hours', 'Females return birth beach', 'Gender sand temperature', 'Ancient species over one hundred million years', 'Threatened plastic pollution'] },
+  { id: 50, category: 'Animals', difficulty: 'Medium', answer: 'Red Fox',                       acceptedAnswers: ['Fox', 'Red Fox'], clues: ['Most widespread wild canine', 'Red coat bushy tail', 'Omnivore diet varieties', 'High intelligence adaptability', 'Uses Earth magnetic field hunt'] },
+  { id: 51, category: 'Animals', difficulty: 'Medium', answer: 'Grizzly Bear',                  acceptedAnswers: ['Grizzly', 'Brown Bear'], clues: ['Can run fifty-six km/h huge size', 'Consumes ninety kg food daily autumn', 'Hibernates in winter', 'Females give birth hibernation', 'Important symbol Native American culture'] },
+  { id: 52, category: 'Animals', difficulty: 'Medium', answer: 'Polar Bear',                    acceptedAnswers: ['Polar Bear', 'White Bear'], clues: ['Largest land carnivore Arctic', 'Fur appears white translucent', 'Black skin absorbs heat', 'Swims hundred km open water', 'Hunts seals sea ice'] },
+  { id: 53, category: 'Animals', difficulty: 'Medium', answer: 'Komodo Dragon',                 acceptedAnswers: ['Komodo', 'Komodo Lizard'], clues: ['Largest lizard venomous bite', 'Up to three meters long', 'Native Indonesian islands', 'Attacks prey bite venom', 'Can run twenty km/h short bursts'] },
+
+  { id: 54, category: 'Animals', difficulty: 'Hard',    answer: 'Great White Shark',               acceptedAnswers: ['Great White', 'White Shark'], clues: ['Detects blood drop one hundred liters water', 'Rows serrated teeth three hundred', 'Must keep swimming breathe', 'Can breach water hunting seals', 'Coastal cool waters worldwide'] },
+  { id: 55, category: 'Animals', difficulty: 'Hard',    answer: 'African Elephant',              acceptedAnswers: ['Elephant', 'African Elephant'], clues: ['Largest land animal', 'Trunk with forty thousand muscles', 'Can recognize self mirror', 'Mourns dead herd members', 'Weighs up to six thousand kg'] },
+  { id: 56, category: 'Animals', difficulty: 'Hard',    answer: 'Peregrine Falcon',               acceptedAnswers: ['Peregrine', 'Falcon'], clues: ['Fastest animal 320 km/h dive', 'Survived near extinction DDT', 'Nests on cliffs skyscrapers', 'Strikes prey clenched foot', 'Found globally except Antarctica'] },
+  { id: 57, category: 'Animals', difficulty: 'Hard',    answer: 'Blue Whale',                    acceptedAnswers: ['Blue Whale', 'Whale'], clues: ['Largest animal ever 30 meters', 'Heart beats eight times per minute', 'Mouthful forty million krill', 'Communicates low frequency one thousand six hundred km', 'Found worldwide oceans'] },
+  { id: 58, category: 'Animals', difficulty: 'Hard',    answer: 'Polar Bear',                    acceptedAnswers: ['Polar Bear', 'White Bear'], clues: ['Largest land carnivore Arctic', 'Fur appears white translucent', 'Black skin absorbs heat', 'Swims hundred km open water', 'Hunts seals sea ice'] },
+  { id: 59, category: 'Animals', difficulty: 'Hard',    answer: 'Komodo Dragon',                 acceptedAnswers: ['Komodo', 'Komodo Lizard'], clues: ['Largest lizard venomous bite', 'Up to three meters long', 'Native Indonesian islands', 'Attacks prey bite venom', 'Can run twenty km/h short bursts'] },
+  { id: 60, category: 'Animals', difficulty: 'Hard',    answer: 'Great White Shark',               acceptedAnswers: ['Great White', 'White Shark'], clues: ['Detects blood drop one hundred liters water', 'Rows serrated teeth three hundred', 'Must keep swimming breathe', 'Can breach water hunting seals', 'Coastal cool waters worldwide'] },
+
+  // ==================== FOOD (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 61, category: 'Food', difficulty: 'Easy',    answer: 'Pizza',                           acceptedAnswers: ['Pizza', 'pizza'], clues: ['Flatbread tomato sauce cheese', 'Margherita named Italian queen', 'Started street food Naples', 'First US pizzeria 1905 NYC', 'Word from Latin meaning pound crush'] },
+  { id: 62, category: 'Food', difficulty: 'Easy',    answer: 'Ice Cream',                     acceptedAnswers: ['Ice Cream', 'ice cream'], clues: ['Frozen cream sugar flavorings', 'Ancient China mixed snow honey fruit', 'Popular 1904 St Louis Worlds Fair', 'Vanilla most popular flavor', 'Fifty licks finish one scoop'] },
+  { id: 63, category: 'Food', difficulty: 'Easy',    answer: 'Tacos',                         acceptedAnswers: ['Tacos', 'Taco'], clues: ['Traditional Mexican dish tortilla folding', 'Word Nahuatl meaning in the middle', 'Soft corn tortillas authentic', 'US taco truck started 1966 NYC', 'Al pastor inspired Lebanese shawarma'] },
+  { id: 64, category: 'Food', difficulty: 'Easy',    answer: 'Hamburger',                     acceptedAnswers: ['Hamburger', 'burger'], clues: ['Ground beef patty split bun', 'Named German city Hamburg', 'Popularized 1904 St Louis World Fair', 'White Castle first fast-food chain 1921', 'Americans eat fifty billion burgers yearly'] },
+  { id: 65, category: 'Food', difficulty: 'Easy',    answer: 'Pasta',                         acceptedAnswers: ['Pasta', 'pasta'], clues: ['Semolina semolina and water egg', 'Documented Italy twelfth century', 'Italy produces three point four million tons', 'Over six hundred shapes Italian', 'Dried fresh different flours'] },
+  { id: 66, category: 'Food', difficulty: 'Easy',    answer: 'Coffee',                        acceptedAnswers: ['Coffee', 'coffee'], clues: ['Brewed roasted seeds Coffea plant', 'Ethiopia birthplace cultivation', 'Second most traded commodity oil', 'Two main types Arabica Robusta', 'Two billion cups consumed daily worldwide'] },
+
+  { id: 67, category: 'Food', difficulty: 'Medium', answer: 'Sushi',                           acceptedAnswers: ['Sushi', 'sushi'], clues: ['Japanese vinegared rice seafood vegetables', 'Originally preserved fish fermented rice', 'Real wasabi rare outside Japan', 'Tokyo street food 1820s', 'Includes maki nigiri sashimi varieties'] },
+  { id: 68, category: 'Food', difficulty: 'Medium', answer: 'Pizza Margherita',                acceptedAnswers: ['Margherita', 'pizza'], clues: ['Classic Italian pizza tomato', 'Fresh mozzarella cheese', 'Basil leaves green', 'Baked wood-fired oven', 'Queen Margherita 1889 named'] },
+  { id: 69, category: 'Food', difficulty: 'Medium', answer: 'Guacamole',                       acceptedAnswers: ['Guacamole', 'guacamole'], clues: ['Mashed avocado Mexican', 'Lime juice adds tartness', 'Cilantro herb garnish', 'Chili peppers add heat', 'Served with tortilla chips'] },
+  { id: 70, category: 'Food', difficulty: 'Medium', answer: 'Pad Thai',                        acceptedAnswers: ['Pad Thai', 'pad thai'], clues: ['Stir-fried rice noodles muang tuan', 'Tamarind sauce sour sweet', 'Shrimp or chicken protein', 'Peanuts crushed garnish', 'Wok high heat cooking'] },
+  { id: 71, category: 'Food', difficulty: 'Medium', answer: 'Ramen',                           acceptedAnswers: ['Ramen', 'ramen'], clues: ['Japanese noodle soup broth', 'Wheat noodles thin', 'Optional toppings boiled', 'Common comfort food Japan', 'Regional variations across Japan'] },
+  { id: 72, category: 'Food', difficulty: 'Medium', answer: 'Burrito',                         acceptedAnswers: ['Burrito', 'burrito'], clues: ['Flour tortilla wrap filling', 'Beans rice cheese common', 'Salsa adds spice', 'Sour cream topping', 'Wrapped then grilled'] },
+  { id: 73, category: 'Food', difficulty: 'Medium', answer: 'Falafel',                         acceptedAnswers: ['Falafel', 'falafel'], clues: ['Ground chickpeas spice blend', 'Deep fried crispy balls', 'Middle Eastern street food', 'Served pita flatbread', 'Tahini sauce dip common'] },
+
+  { id: 74, category: 'Food', difficulty: 'Hard',    answer: 'Pho',                             acceptedAnswers: ['Pho', 'pho'], clues: ['Vietnamese noodle soup broth', 'Aromatic broth herbs', 'Rice noodles meat', 'Thai basil bean sprouts', 'Origin Northern Vietnam'] },
+  { id: 75, category: 'Food', difficulty: 'Hard',    answer: 'Mole',                            acceptedAnswers: ['Mole', 'mole'], clues: ['Complex Mexican sauce', 'Chocolate and chili ingredients', 'Ancient Aztec roots', 'Over fifty spice variations', 'Served over chicken turkey meat'] },
+  { id: 76, category: 'Food', difficulty: 'Hard',    answer: 'Risotto',                         acceptedAnswers: ['Risotto', 'risotto'], clues: ['Italian creamy rice dish', 'Stock broth added gradually', 'Arborio rice short grain', 'Parmesan cheese finished', 'Butter white wine sofrito base'] },
+  { id: 77, category: 'Food', difficulty: 'Hard',    answer: 'Nigiri Sushi',                  acceptedAnswers: ['Nigiri', 'nigiri'], clues: ['Hand-formed rice balls', 'Topped with fresh fish slices', 'Traditional E tonic', 'Chef presses rice', 'Wasabi served side dish'] },
+  { id: 78, category: 'Food', difficulty: 'Hard',    answer: 'Dumplings',                       acceptedAnswers: ['Dumplings', 'dumplings'], clues: ['Steamed dough pockets', 'Various fillings globally', 'Asian cuisines widely', 'Cooked boiled or pan-fried', 'Chinese jiaozi Korean mandu'] },
+  { id: 79, category: 'Food', difficulty: 'Hard',    answer: 'Paella',                         acceptedAnswers: ['Paella', 'paella'], clues: ['Spanish saffron rice dish', 'Short grain Bomba rice', 'Saffron threads golden', 'Seafood chicken vegetables', 'Traditional Valencian ingredients'] },
+  { id: 80, category: 'Food', difficulty: 'Hard',    answer: 'Peruvian Chocolate',             acceptedAnswers: ['Chocolate', 'chocolate'], clues: ['Dark sweet fancy', 'Beans fermented roasted', 'Azcaquaque origin Mexico', 'Conched ground into liquorice', 'Melt silky mouthfeel'] },
+
+  // ==================== COMPANIES (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 81, category: 'Companies', difficulty: 'Easy',    answer: 'Apple',                       acceptedAnswers: ['Apple Inc', 'Apple'], clues: ['Founded by Steve Jobs', 'iPhone revolution', 'Macintosh computer', 'Cupertino headquarters', 'Worlds most valuable company'] },
+  { id: 82, category: 'Companies', difficulty: 'Easy',    answer: 'Microsoft',                   acceptedAnswers: ['Microsoft Corp', 'Microsoft'], clues: ['Founded by Bill Gates', 'Windows operating system', 'Office productivity suite', 'Azure cloud platform', 'Xbox gaming console'] },
+  { id: 83, category: 'Companies', difficulty: 'Easy',    answer: 'Google',                      acceptedAnswers: ['Google LLC', 'Google', 'Alphabet'], clues: ['Search engine dominance', 'Android mobile OS', 'YouTube video platform', 'Self-driving Waymo', 'AdWords advertising'] },
+  { id: 84, category: 'Companies', difficulty: 'Easy',    answer: 'Amazon',                      acceptedAnswers: ['Amazon.com', 'Amazon'], clues: ['Online retail giant', 'Prime subscription service', 'AWS cloud computing', 'Kindle e-reader', 'Whole Foods acquisition'] },
+  { id: 85, category: 'Companies', difficulty: 'Easy',    answer: 'Facebook',                    acceptedAnswers: ['Facebook', 'Meta', 'Meta Platforms'], clues: ['Social media network', 'Instagram photo sharing', 'WhatsApp messaging', 'Oculus VR headset', 'Metaverse vision'] },
+  { id: 86, category: 'Companies', difficulty: 'Easy',    answer: 'Tesla',                       acceptedAnswers: ['Tesla Inc', 'Tesla'], clues: ['Electric vehicle pioneer', 'Model S sedan', 'Autopilot driving', 'Solar roof tiles', 'Gigafactory production'] },
+
+  { id: 87, category: 'Companies', difficulty: 'Medium', answer: 'Netflix',                     acceptedAnswers: ['Netflix Inc', 'Netflix'], clues: ['Streaming entertainment', 'Original content production', 'Subscription video on demand', 'Binge watching culture', 'DVD-by-mail legacy'] },
+  { id: 88, category: 'Companies', difficulty: 'Medium', answer: 'Disney',                      acceptedAnswers: ['Walt Disney', 'Disney Company'], clues: ['Theme parks worldwide', 'Mickey Mouse icon', 'Marvel superhero franchise', 'Star Wars licensee', 'Animation studio legacy'] },
+  { id: 89, category: 'Companies', difficulty: 'Medium', answer: 'Toyota',                      acceptedAnswers: ['Toyota Motor', 'Toyota'], clues: ['Japanese automaker', 'Prius hybrid technology', 'Lean manufacturing system', 'Corolla bestseller', 'Lexus luxury division'] },
+  { id: 90, category: 'Companies', difficulty: 'Medium', answer: 'Coca-Cola',                   acceptedAnswers: ['Coca-Cola Co', 'Coca-Cola'], clues: ['Secret formula beverage', 'Global distribution network', 'Holiday advertising campaigns', 'Sprite lemon-lime variant', 'Dasani water brand'] },
+  { id: 91, category: 'Companies', difficulty: 'Medium', answer: 'Samsung',                     acceptedAnswers: ['Samsung Group', 'Samsung Electronics'], clues: ['South Korean conglomerate', 'Galaxy smartphone line', 'Semiconductor memory chips', 'Curved OLED TVs', 'Appliance home electronics'] },
+  { id: 92, category: 'Companies', difficulty: 'Medium', answer: 'McDonalds',                   acceptedAnswers: ['McDonalds Corp', 'McDonalds'], clues: ['Fast food hamburger chain', 'Golden arches logo', 'Big Mac sandwich', 'PlayPlace for children', 'Drive-thru service innovation'] },
+  { id: 93, category: 'Companies', difficulty: 'Medium', answer: 'Starbucks',                   acceptedAnswers: ['Starbucks Corp', 'Starbucks'], clues: ['Coffeehouse chain', 'Pumpkin spice latte', 'Ethical coffee sourcing', 'Mobile order pay app', 'Reserve premium roastery'] },
+
+  { id: 94, category: 'Companies', difficulty: 'Hard',    answer: 'Intel',                       acceptedAnswers: ['Intel Corp', 'Intel'], clues: ['Microprocessor inventor', 'X86 architecture dominance', 'Moore\'s law observation', 'Data center CPUs', 'Solid state drive storage'] },
+  { id: 95, category: 'Companies', difficulty: 'Hard',    answer: 'IBM',                         acceptedAnswers: ['IBM Corp', 'International Business Machines'], clues: ['Punch card tabulating', 'Mainframe computer systems', 'Watson AI platform', 'Linux open source support', 'Dividend aristocrat stock'] },
+  { id: 96, category: 'Companies', difficulty: 'Hard',    answer: 'General Electric',            acceptedAnswers: ['GE', 'General Electric'], clues: ['Light bulb innovation', 'Jet engine turbine', 'Medical imaging equipment', 'Renewable energy wind', 'Appliance refrigerator stove'] },
+  { id: 97, category: 'Companies', difficulty: 'Hard',    answer: 'Boeing',                      acceptedAnswers: ['Boeing Co', 'Boeing'], clues: ['Aircraft manufacturer', '747 jumbo jet', 'Dreamliner 787 composite', 'Defense contractor', 'Space exploration rockets'] },
+  { id: 98, category: 'Companies', difficulty: 'Hard',    answer: 'Exxon Mobil',                 acceptedAnswers: ['Exxon Mobil Corp', 'ExxonMobil'], clues: ['Oil and gas producer', 'Upstream downstream operations', 'Chemical division polymers', 'Carbon capture research', 'Dividend payment history'] },
+  { id: 99, category: 'Companies', difficulty: 'Hard',    answer: 'Walmart',                     acceptedAnswers: ['Walmart Inc', 'Walmart'], clues: ['Retail discount chain', 'Supercenter store format', 'Sam\'s warehouse club', 'Grocery food distribution', 'Private label brands'] },
+  { id: 100, category: 'Companies', difficulty: 'Hard',   answer: 'Nike',                        acceptedAnswers: ['Nike Inc', 'Nike'], clues: ['Just do it slogan', 'Air Jordan sneakers', 'Sports apparel leader', 'Manufacturing supply chain', 'Endorsement athlete deals'] },
+
+  // ==================== MOVIES (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 101, category: 'Movies', difficulty: 'Easy',    answer: 'Titanic',                       acceptedAnswers: ['Titanic movie', 'Titanic'], clues: ['James Cameron director', 'Leonardo DiCaprio Kate Winslet', 'Iceberg sinking 1912', 'Oscars best picture', 'Celine Dion theme song'] },
+  { id: 102, category: 'Movies', difficulty: 'Easy',    answer: 'Avatar',                        acceptedAnswers: ['Avatar movie', 'Avatar'], clues: ['James Cameron sci-fi', 'Pandora alien world', '3D technology breakthrough', 'Highest grossing film', 'Sequel planned'] },
+  { id: 103, category: 'Movies', difficulty: 'Easy',    answer: 'The Godfather',                 acceptedAnswers: ['The Godfather', 'Godfather'], clues: ['Francis Ford Coppola', 'Mafia crime family', 'Marlon Brando Vito Corleone', 'Sequel Part II', 'Cannoli line leave the gun'] },
+  { id: 104, category: 'Movies', difficulty: 'Easy',    answer: 'Star Wars',                     acceptedAnswers: ['Star Wars', 'Star Wars movie'], clues: ['George Lucas creator', 'Luke Skywalker hero', 'Lightsaber weapon', 'Death Star space station', 'May the force be with you'] },
+  { id: 105, category: 'Movies', difficulty: 'Easy',    answer: 'Avengers Endgame',              acceptedAnswers: ['Avengers Endgame', 'Endgame'], clues: ['Marvel Cinematic Universe', 'Robert Downey Jr Iron Man', 'Thanos snap villain', 'Superhero team assemble', 'Highest grossing 2019'] },
+  { id: 106, category: 'Movies', difficulty: 'Easy',    answer: 'Jurassic Park',                 acceptedAnswers: ['Jurassic Park', 'Jurassic Park movie'], clues: ['Steven Spielberg director', 'Dinosaur cloning chaos', 'Jeff Goldblum chaos theory', 'Velociraptor kitchen scene', 'Isla Nublar island setting'] },
+
+  { id: 107, category: 'Movies', difficulty: 'Medium', answer: 'Parasite',                      acceptedAnswers: ['Parasite movie', 'Parasite'], clues: ['Bong Joon-ho director', 'Korean black comedy', 'Social thriller satire', 'Academy Award best picture', 'First foreign language Oscar'] },
+  { id: 108, category: 'Movies', difficulty: 'Medium', answer: 'Inception',                     acceptedAnswers: ['Inception movie', 'Inception'], clues: ['Christopher Nolan director', 'Leonardo DiCaprio dream thief', 'Totem spinning top', 'Layered dream reality', 'WB production company'] },
+  { id: 109, category: 'Movies', difficulty: 'Medium', answer: 'The Shawshank Redemption',      acceptedAnswers: ['Shawshank Redemption', 'Shawshank'], clues: ['Frank Darabont director', 'Tim Robbins Andy Dufresne', 'Morgan Freeman Ellis Boyd Red', 'Hope springs eternal', 'Ohio state prison setting'] },
+  { id: 110, category: 'Movies', difficulty: 'Medium', answer: 'Pulp Fiction',                  acceptedAnswers: ['Pulp Fiction movie', 'Pulp Fiction'], clues: ['Quentin Tarantino director', 'John Travolta Vincent Vega', 'Samuel L Jackson Jules Winnfield', 'Nonlinear storyline', 'Royale with cheese dance'] },
+  { id: 111, category: 'Movies', difficulty: 'Medium', answer: 'Forrest Gump',                  acceptedAnswers: ['Forrest Gump movie', 'Forrest Gump'], clues: ['Robert Zemeckis director', 'Tom Hanks title role', 'Life is like a box', 'Running across America', 'Shrimp boat business'] },
+  { id: 112, category: 'Movies', difficulty: 'Medium', answer: 'The Matrix',                    acceptedAnswers: ['The Matrix', 'Matrix movie'], clues: ['Wachowski siblings creators', 'Keanu Reeves Neo hacker', 'Red pill blue pill choice', 'Simulated reality construct', 'Bullet time slow motion'] },
+  { id: 113, category: 'Movies', difficulty: 'Medium', answer: 'Spirited Away',                 acceptedAnswers: ['Spirited Away', 'Spirited Away movie'], clues: ['Hayao Miyazaki director', 'Bathhouse spirit world', 'Chihiro Ogino protagonist', 'Academy Award animation', 'Japanese Studio Ghibli'] },
+
+  { id: 114, category: 'Movies', difficulty: 'Hard',    answer: 'Citizen Kane',                  acceptedAnswers: ['Citizen Kane', 'Citizen Kane movie'], clues: ['Orson Welles director writer', 'Newspaper tycoon Charles Foster Kane', 'Rosebud sled childhood', 'Deep focus cinematography', 'Worst film ever debate'] },
+  { id: 115, category: 'Movies', difficulty: 'Hard',    answer: 'The Godfather Part II',         acceptedAnswers: ['Godfather Part II', 'Godfather II'], clues: ['Francis Ford Coppola sequel', 'Robert De Niro young Vito', 'Al Pacino Michael Corleone', 'Parallel storytelling past present', 'Oscars best picture sequel'] },
+  { id: 116, category: 'Movies', difficulty: 'Hard',    answer: 'Schindlers List',               acceptedAnswers: ['Schindlers List', 'Schindlers List movie'], clues: ['Steven Spielberg director', 'Liam Neeson Oskar Schindler', 'Jewish Holocaust rescue', 'Black and white cinematography', 'Longest running theatrical'] },
+  { id: 117, category: 'Movies', difficulty: 'Hard',    answer: 'Psycho',                        acceptedAnswers: ['Psycho movie', 'Psycho'], clues: ['Alfred Hitchcock director', 'Janet Leigh shower murder', 'Norman Bates motel owner', 'Twisting staircase climax', 'Hill house horror setting'] },
+  { id: 118, category: 'Movies', difficulty: 'Hard',    answer: '2001: A Space Odyssey',         acceptedAnswers: ['2001', '2001: A Space Odyssey movie'], clues: ['Stanley Kubrick director', 'Keir Dullea Dave Bowman', 'HAL 9000 computer AI', 'Monolith alien artifact', 'Jupiter and beyond infinite'] },
+  { id: 119, category: 'Movies', difficulty: 'Hard',    answer: 'The Shawshank Redemption',      acceptedAnswers: ['Shawshank Redemption', 'Shawshank'], clues: ['Frank Darabont director', 'Tim Robbins Andy Dufresne', 'Morgan Freeman Ellis Boyd Red', 'Hope springs eternal', 'Ohio state prison setting'] },
+  { id: 120, category: 'Movies', difficulty: 'Hard',    answer: 'The Lord of the Rings: The Fellowship of the Ring', acceptedAnswers: ['Lord of the Rings', 'Lord of the Rings movie'], clues: ['Peter Jackson director', 'Frodo Baggins hobbit hero', 'Gandalf the Grey wizard', 'Nine companions journey', 'Middle Earth fantasy epic'] },
+
+  // ==================== SPORTS (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 121, category: 'Sports', difficulty: 'Easy',    answer: 'Soccer',                        acceptedAnswers: ['Soccer', 'Football', 'Association football'], clues: ['Worlds most popular sport', 'FIFA World Cup tournament', 'Goals netted scoring', 'Eleven players per team', 'No hands except goalkeeper'] },
+  { id: 122, category: 'Sports', difficulty: 'Easy',    answer: 'Basketball',                    acceptedAnswers: ['Basketball', 'NBA basketball'], clues: ['Indoor court sport', 'Orange spherical ball', 'Hoop ten feet high', 'Dribbling shooting passing', 'Traveling violation rule'] },
+  { id: 123, category: 'Sports', difficulty: 'Easy',    answer: 'Baseball',                      acceptedAnswers: ['Baseball', 'MLB baseball'], clues: ['Bat and ball sport', 'Diamond shaped field', 'Three strikes out rule', 'Home run circuit bases', 'Hot dog concession stand'] },
+  { id: 124, category: 'Sports', difficulty: 'Easy',    answer: 'Tennis',                        acceptedAnswers: ['Tennis', 'Lawn tennis'], clues: ['Individual racquet sport', 'Grass clay hard courts', 'Love means zero points', 'Deuce advantage scoring', 'Wimbledon grass tournament'] },
+  { id: 125, category: 'Sports', difficulty: 'Easy',    answer: 'Golf',                          acceptedAnswers: ['Golf', 'Golf sport'], clues: ['Club and ball sport', 'Eighteen hole courses', 'Par three four five scoring', 'Masters Augusta National', 'Tiger Woods dominance era'] },
+  { id: 126, category: 'Sports', difficulty: 'Easy',    answer: 'American Football',             acceptedAnswers: ['American Football', 'NFL football'], clues: ['Oval leather ball', 'Touchdown six points', 'Quarterback leader position', 'Super Bowl championship', 'Blocking tackling downs'] },
+
+  { id: 127, category: 'Sports', difficulty: 'Medium', answer: 'Olympics',                      acceptedAnswers: ['Olympics', 'Olympic Games'], clues: ['Ancient Greek origin', 'Modern revival 1896 Athens', 'Summer winter alternating', 'Five ring symbol union', 'Olympic motto citius altius fortius'] },
+  { id: 128, category: 'Sports', difficulty: 'Medium', answer: 'FIFA World Cup',                acceptedAnswers: ['World Cup', 'FIFA World Cup'], clues: ['Quadrennial soccer tournament', 'Thirty two teams final', 'Golden Boot top scorer', 'Host nation automatic qualify', 'Trophy Jules Rimet replica'] },
+  { id: 129, category: 'Sports', difficulty: 'Medium', answer: 'Super Bowl',                    acceptedAnswers: ['Super Bowl', 'Super Bowl game'], clues: ['Annual NFL championship', 'Roman numeral numbering', 'Halftime show entertainment', 'Most watched US television', 'Lombardi Trophy Vince Lombardi'] },
+  { id: 130, category: 'Sports', difficulty: 'Medium', answer: 'Wimbledon',                     acceptedAnswers: ['Wimbledon', 'Wimbledon Championships'], clues: ['Oldest tennis tournament', 'Grass court surface', 'Tradition strawberries cream', 'Royal patronage attendance', 'Challenge round until 1922'] },
+  { id: 131, category: 'Sports', difficulty: 'Medium', answer: 'Masters Tournament',            acceptedAnswers: ['Masters', 'Masters Tournament golf'], clues: ['Annual major golf championship', 'Invitational field players', 'Green jacket winner attire', 'Amen Corner holes 11 12 13', 'Founded 1934 by Bobby Jones'] },
+  { id: 132, category: 'Sports', difficulty: 'Medium', answer: 'Tour de France',                acceptedAnswers: ['Tour de France', 'Tour de France cycling'], clues: ['Three week stage race', 'Yellow jersey leader', 'Mountain climb stages', 'Time trial individual effort', 'Paris Champs Elysees finish'] },
+  { id: 133, category: 'Sports', difficulty: 'Medium', answer: 'Cricket World Cup',             acceptedAnswers: ['Cricket World Cup', 'ICC Cricket World Cup'], clues: ['Quadrennial cricket tournament', 'Ten test playing nations', 'One Day International format', 'Host rotates continents', 'Trophy lifted by captain'] },
+
+  { id: 134, category: 'Sports', difficulty: 'Hard',    answer: 'Michael Jordan',                acceptedAnswers: ['Michael Jordan', 'MJ', 'Jordan'], clues: ['Chicago Bulls shooting guard', 'Six NBA championships', 'Five MVP awards', 'Comeback Washington Wizards', 'Sneakers Air Jordan brand'] },
+  { id: 135, category: 'Sports', difficulty: 'Hard',    answer: 'Pele',                          acceptedAnswers: ['Pele', 'Edson Arantes do Nascimento'], clues: ['Brazilian soccer forward', 'Three World Cup wins', 'Thousand career goals', 'Santos New York Cosmos', 'Global ambassador sport'] },
+  { id: 136, category: 'Sports', difficulty: 'Hard',    answer: 'Serena Williams',               acceptedAnswers: ['Serena Williams', 'Serena'], clues: ['Tennis female champion', '23 Grand Slam singles', 'Olympic gold doubles', 'Williams sisters dominance', 'Comeback after childbirth'] },
+  { id: 137, category: 'Sports', difficulty: 'Hard',    answer: 'Usain Bolt',                    acceptedAnswers: ['Usain Bolt', 'Bolt'], clues: ['Jamaican sprinter', '100m 9.58 world record', '200m 19.19 world record', 'Triple Olympic sprint gold', 'Lightning Bolt nickname'] },
+  { id: 138, category: 'Sports', difficulty: 'Hard',    answer: 'Tom Brady',                     acceptedAnswers: ['Tom Brady', 'TB12'], clues: ['New England Patriots quarterback', 'Seven Super Bowl wins', 'MVP awards multiple', 'Deflategate controversy', 'TB12 fitness method'] },
+  { id: 139, category: 'Sports', difficulty: 'Hard',    answer: 'Simone Biles',                  acceptedAnswers: ['Simone Biles', 'Biles'], clues: ['Olympic gymnastics champion', 'Four gold medals Rio 2016', 'Mental health advocate', 'Skills named after her', 'Most decorated American'] },
+  { id: 140, category: 'Sports', difficulty: 'Hard',    answer: 'Lionel Messi',                  acceptedAnswers: ['Lionel Messi', 'Messi'], clues: ['Argentine soccer forward', 'Eight Ballon dOr awards', 'Paris Saint Germain club', 'Inter Miami MLS team', 'World Cup 2022 winner'] },
+
+  // ==================== HISTORY (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 141, category: 'History', difficulty: 'Easy',    answer: 'World War II',                acceptedAnswers: ['World War 2', 'WWII', 'Second World War'], clues: ['Global conflict 1939-1945', 'Allies versus Axis powers', 'Pearl Harbor attack', 'D-Day Normandy invasion', 'Atomic bomb Hiroshima Nagasaki'] },
+  { id: 142, category: 'History', difficulty: 'Easy',    answer: 'American Revolution',         acceptedAnswers: ['American Revolution', 'US War of Independence'], clues: ['Thirteen colonies rebel', 'Declaration of Independence 1776', 'Boston Tea Party protest', 'Valley Forge winter encampment', 'Treaty of Paris 1783'] },
+  { id: 143, category: 'History', difficulty: 'Easy',    answer: 'French Revolution',           acceptedAnswers: ['French Revolution', 'Revolution francaise'], clues: ['Estates General 1789 assembly', 'Bastille prison stormed', 'Liberty Equality Fraternity', 'Reign of Terror guillotine', 'Napoleon Bonaparte rise'] },
+  { id: 144, category: 'History', difficulty: 'Easy',    answer: 'Civil War',                   acceptedAnswers: ['American Civil War', 'US Civil War'], clues: ['North versus South conflict', 'Slavery abolition issue', 'Fort Sumter bombardment', 'Gettysburg Address speech', 'Appomattox Court House surrender'] },
+  { id: 145, category: 'History', difficulty: 'Easy',    answer: 'Industrial Revolution',       acceptedAnswers: ['Industrial Revolution', 'Industrial Rev'], clues: ['Mechanization factory system', 'Steam engine power textile', 'Urbanization cities growth', 'Child labor exploitation', 'Second phase electricity'] },
+  { id: 146, category: 'History', difficulty: 'Easy',    answer: 'Cold War',                    acceptedAnswers: ['Cold War', 'Cold War era'], clues: ['United States versus USSR', 'NATO versus Warsaw Pact', 'Berlin Wall division', 'Cuban Missile Crisis standoff', 'Space race moon landing'] },
+
+  { id: 147, category: 'History', difficulty: 'Medium', answer: 'Renaissance',                 acceptedAnswers: ['Renaissance', 'Renaissance period'], clues: ['Italian city-state flowering', 'Humanism classical learning', 'Art perspective realism', 'Printing press Gutenberg', 'Scientific revolution foundation'] },
+  { id: 148, category: 'History', difficulty: 'Medium', answer: 'World War I',                 acceptedAnswers: ['World War 1', 'WWI', 'First World War'], clues: ['Assassination Franz Ferdinand', 'Trench warfare stalemate', 'Lusitania sinking propaganda', 'Versailles Treaty peace', 'League of Nations precursor'] },
+  { id: 149, category: 'History', difficulty: 'Medium', answer: 'Ancient Egypt',               acceptedAnswers: ['Ancient Egypt', 'Ancient Egyptian civilization'], clues: ['Nile River lifeblood', 'Pyramid tombs pharaohs', 'Hieroglyphic writing system', 'Mummification afterlife belief', 'Cleopatra VII last pharaoh'] },
+  { id: 150, category: 'History', difficulty: 'Medium', answer: 'Ancient Greece',              acceptedAnswers: ['Ancient Greece', 'Ancient Greek civilization'], clues: ['City-state polis democracy', 'Philosophy Plato Aristotle', 'Olympic Games competition', 'Parthenon Athena temple', 'Peloponnesian War Sparta Athens'] },
+  { id: 151, category: 'History', difficulty: 'Medium', answer: 'Ancient Rome',                acceptedAnswers: ['Ancient Rome', 'Ancient Roman civilization'], clues: ['Republic to empire transition', 'Colosseum gladiator fights', 'Aqueduct water supply system', 'Pax Romana peace period', 'Fall barbarian invasions'] },
+  { id: 152, category: 'History', difficulty: 'Medium', answer: 'The Holocaust',               acceptedAnswers: ['Holocaust', 'Shoah'], clues: ['Nazi genocide Jewish people', 'Six million murdered total', 'Concentration camps extermination', 'Liberation by Allied forces', 'Nuremberg Trials justice'] },
+  { id: 153, category: 'History', difficulty: 'Medium', answer: 'The Cold War',                acceptedAnswers: ['Cold War', 'Cold War era'], clues: ['United States versus USSR', 'NATO versus Warsaw Pact', 'Berlin Wall division', 'Cuban Missile Crisis standoff', 'Space race moon landing'] },
+
+  { id: 154, category: 'History', difficulty: 'Hard',    answer: 'The American Civil Rights Movement', acceptedAnswers: ['Civil Rights Movement', 'CRM'], clues: ['Montgomery Bus Boycott 1955', 'Lunch counter sit-ins protest', 'March on Washington 1963', 'Voting Rights Act 1965', 'Fair Housing Act 1968'] },
+  { id: 155, category: 'History', difficulty: 'Hard',    answer: 'The Vietnam War',             acceptedAnswers: ['Vietnam War', 'Second Indochina War'], clues: ['Gulf of Tonkin resolution', 'Draft lottery conscription', 'My Lai massacre atrocity', 'Paris Peace Accords 1973', 'Agent Orange defoliant spray'] },
+  { id: 156, category: 'History', difficulty: 'Hard',    answer: 'The Cuban Missile Crisis',    acceptedAnswers: ['Cuban Missile Crisis', 'CMC 1962'], clues: ['John F. Kennedy president', 'Nikita Khrushchev Soviet leader', 'Thirteen day standoff', 'Naval blockade quarantine', 'Khrushchev backs down remove'] },
+  { id: 157, category: 'History', difficulty: 'Hard',    answer: 'The Fall of the Berlin Wall', acceptedAnswers: ['Fall of the Berlin Wall', 'Berlin Wall 1989'], clues: ['East versus West Germany', 'Günter Schabowski announcement', 'Peaceful revolution demonstrations', 'Brandenburg Gate opening', 'German reunification process'] },
+  { id: 158, category: 'History', difficulty: 'Hard',    answer: 'The Attack on Pearl Harbor',  acceptedAnswers: ['Pearl Harbor', 'Pearl Harbor attack'], clues: ['December 7 1941 Sunday morning', 'Japanese imperial navy strike', 'Battleship Row destruction', 'United States naval base', 'Led to US entry WWII'] },
+  { id: 159, category: 'History', difficulty: 'Hard',    answer: 'The Boston Tea Party',        acceptedAnswers: ['Boston Tea Party', 'BTP 1773'], clues: ['December 16 1773 nighttime', 'Colonists protest tax', 'Mohawk Indians disguise', 'Three hundred forty two chests', 'Harbor water saltwater'] },
+  { id: 160, category: 'History', difficulty: 'Hard',    answer: 'The Prohibition Era',         acceptedAnswers: ['Prohibition', 'Prohibition era'], clues: ['Eighteenth Amendment ratified', 'Volstead Act enforcement', 'Speakeasy illegal liquor', 'Organized crime bootlegging', 'Twenty-first Amendment repeal'] },
+
+  // ==================== SCIENCE (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 161, category: 'Science', difficulty: 'Easy',    answer: 'Gravity',                       acceptedAnswers: ['Gravity', 'gravitational force'], clues: ['Isaac Newton apple legend', 'Keeps planets orbiting', 'Accelerates falling objects', 'Weight versus mass distinction', 'General relativity curvature'] },
+  { id: 162, category: 'Science', difficulty: 'Easy',    answer: 'Photosynthesis',                acceptedAnswers: ['Photosynthesis', 'photo synthesis'], clues: ['Plants convert sunlight', 'Carbon dioxide water sugar', 'Chlorophyll green pigment', 'Oxygen byproduct release', 'Energy storage glucose'] },
+  { id: 163, category: 'Science', difficulty: 'Easy',    answer: 'DNA',                         acceptedAnswers: ['DNA', 'deoxyribonucleic acid'], clues: ['Double helix structure', 'Watson and Crick model', 'Genetic inheritance code', 'Adenine thymine pairing', 'Cytosine guanine bonding'] },
+  { id: 164, category: 'Science', difficulty: 'Easy',    answer: 'Atom',                        acceptedAnswers: ['Atom', 'atomic theory'], clues: ['Smallest unit of matter', 'Nucleus protons neutrons', 'Electron cloud orbitals', 'Chemical elements periodic', 'Quantum mechanics model'] },
+  { id: 165, category: 'Science', difficulty: 'Easy',    answer: 'Evolution',                     acceptedAnswers: ['Evolution', 'evolutionary theory'], clues: ['Charles Darwin natural selection', 'Survival of the fittest', 'Adaptation to environment', 'Fossil evidence record', 'Speciation formation'] },
+  { id: 166, category: 'Science', difficulty: 'Easy',    answer: 'Climate Change',              acceptedAnswers: ['Climate Change', 'climate change'], clues: ['Greenhouse gas emissions', 'Rising sea levels', 'Extreme weather events', 'Melting ice caps glaciers', 'Carbon dioxide parts per million'] },
+
+  { id: 167, category: 'Science', difficulty: 'Medium', answer: 'Quantum Mechanics',             acceptedAnswers: ['Quantum Mechanics', 'quantum theory'], clues: ['Wave-particle duality', 'Uncertainty principle', 'Superposition states', 'Entanglement spooky action', 'Schrodinger equation wave'] },
+  { id: 168, category: 'Science', difficulty: 'Medium', answer: 'Relativity',                    acceptedAnswers: ['Relativity', 'einstein relativity'], clues: ['Special relativity 1905', 'General relativity 1915', 'Speed of light constant', 'Mass energy equivalence', 'Gravitational lensing bending'] },
+  { id: 169, category: 'Science', difficulty: 'Medium', answer: 'Periodic Table',                acceptedAnswers: ['Periodic Table', 'periodic table of elements'], clues: ['Dmitri Mendeleev creator', 'Atomic number organization', 'Groups columns families', 'Periods rows series', 'Atomic weight averages'] },
+  { id: 170, category: 'Science', difficulty: 'Medium', answer: 'Plate Tectonics',               acceptedAnswers: ['Plate Tectonics', 'plate tectonics theory'], clues: ['Continental drift hypothesis', 'Seafloor spreading evidence', 'Convergent divergent transform', 'Pacific Ring of Fire volcanoes', 'Lithosphere asthenosphere layers'] },
+  { id: 171, category: 'Science', difficulty: 'Medium', answer: 'Big Bang Theory',               acceptedAnswers: ['Big Bang Theory', 'big bang cosmology'], clues: ['Singularity origin universe', 'Cosmic microwave background', 'Hubble expansion redshift', 'Inflation rapid early growth', 'Dark energy dark matter'] },
+  { id: 172, category: 'Science', difficulty: 'Medium', answer: 'Vaccines',                      acceptedAnswers: ['Vaccines', 'vaccination'], clues: ['Edward Jenner smallpox', 'Immune system antibody response', 'Herd immunity protection', 'Clinical trials safety efficacy', 'mRNA coronavirus innovation'] },
+  { id: 173, category: 'Science', difficulty: 'Medium', answer: 'Antibiotics',                   acceptedAnswers: ['Antibiotics', 'antibiotic drugs'], clues: ['Alexander Fleming penicillin', 'Bacteria infection treatment', 'Resistance evolution problem', 'Spectrum narrow broad', 'Course duration dosage'] },
+
+  { id: 174, category: 'Science', difficulty: 'Hard',    answer: 'String Theory',                 acceptedAnswers: ['String Theory', 'string theory physics'], clues: ['Vibrational strings universe', 'Eleven dimensions M theory', 'Unifies quantum gravity', 'Microscopic Planck scale', 'Landscape multiverse speculation'] },
+  { id: 175, category: 'Science', difficulty: 'Hard',    answer: 'Nuclear Fusion',                acceptedAnswers: ['Nuclear Fusion', 'fusion reaction'], clues: ['Hydrogen isotopes deuterium tritium', 'Helium neutron energy release', 'Tokamak magnetic confinement', 'Iter experimental reactor', 'Stellar proton proton chain'] },
+  { id: 176, category: 'Science', difficulty: 'Hard',    answer: 'Artificial Intelligence',       acceptedAnswers: ['Artificial Intelligence', 'AI machine learning'], clues: ['Alan Turing test imitation', 'Neural network deep learning', 'Computer vision pattern recognition', 'Natural language processing', 'Reinforcement learning rewards'] },
+  { id: 177, category: 'Science', difficulty: 'Hard',    answer: 'Climate Modeling',              acceptedAnswers: ['Climate Modeling', 'climate simulation'], clues: ['General circulation models', 'Coupled ocean atmosphere', 'Radiative transfer equations', 'Feedback loops sensitivity', 'Policy decision support'] },
+  { id: 178, category: 'Science', difficulty: 'Hard',    answer: 'Genome Editing',                acceptedAnswers: ['Genome Editing', 'crispr cas9'], clues: ['Jennifer Doudna Emmanuelle Charpentier', 'Guide RNA target sequence', 'Cut DNA repair mechanisms', 'Knockout knockin modifications', 'Base editing prime editing'] },
+  { id: 179, category: 'Science', difficulty: 'Hard',    answer: 'Particle Physics',              acceptedAnswers: ['Particle Physics', 'high energy physics'], clues: ['Large Hadron Collider', 'Proton proton collisions', 'Higgs boson discovery', 'Standard model framework', 'Neutrino oscillation flavors'] },
+  { id: 180, category: 'Science', difficulty: 'Hard',    answer: 'Nanotechnology',                acceptedAnswers: ['Nanotechnology', 'nanoscale engineering'], clues: ['Richard Feynman plenty room', 'Carbon nanotubes graphene', 'Drug delivery targeting', 'Nanorobots medicine', 'Quantum dot semiconductors'] },
+
+  // ==================== OBJECTS (6 Easy, 7 Medium, 7 Hard) ====================
+  { id: 181, category: 'Objects', difficulty: 'Easy',    answer: 'Clock',                         acceptedAnswers: ['Clock', 'timepiece'], clues: ['Measures passage time', 'Analog dial hands', 'Digital numeric display', 'Atomic standard cesium', 'Alarm wake up feature'] },
+  { id: 182, category: 'Objects', difficulty: 'Easy',    answer: 'Light Bulb',                    acceptedAnswers: ['Light bulb', 'incandescent bulb'], clues: ['Thomas Edison invention', 'Filament glows hot', 'Watts power consumption', 'LED semiconductor replacement', 'Incandescent phase out'] },
+  { id: 183, category: 'Objects', difficulty: 'Easy',    answer: 'Telephone',                     acceptedAnswers: ['Telephone', 'phone'], clues: ['Alexander Graham Bell', 'Converts sound electric', 'Rotary dial pulses', 'Smartphone mobile device', 'Voice over IP technology'] },
+  { id: 184, category: 'Objects', difficulty: 'Easy',    answer: 'Computer',                      acceptedAnswers: ['Computer', 'personal computer'], clues: ['Electronic data processing', 'Central processing unit CPU', 'Random access memory RAM', 'Hard disk drive storage', 'Graphics processing unit GPU'] },
+  { id: 185, category: 'Objects', difficulty: 'Easy',    answer: 'Car',                         acceptedAnswers: ['Car', 'automobile'], clues: ['Four wheels transportation', 'Internal combustion engine', 'Steering wheel control', 'Brake pedal stop', 'Seatbelt safety restraint'] },
+  { id: 186, category: 'Objects', difficulty: 'Easy',    answer: 'Book',                        acceptedAnswers: ['Book', 'reading book'], clues: ['Written pages bound', 'Paperback hardcover formats', 'ISBN identification', 'Library catalog system', 'E-reader electronic format'] },
+
+  { id: 187, category: 'Objects', difficulty: 'Medium', answer: 'Refrigerator',                  acceptedAnswers: ['Refrigerator', 'fridge'], clues: ['Keeps food cold fresh', 'Compressor refrigerant cycle', 'Adjustable temperature zones', 'Ice maker cube dispenser', 'Door seal gasket efficiency'] },
+  { id: 188, category: 'Objects', difficulty: 'Medium', answer: 'Washing Machine',               acceptedAnswers: ['Washing Machine', 'washer'], clues: ['Cleans clothes laundry', 'Agitator tumbler drum', 'Water fill drain spins', 'Detergent fabric softener', 'Spin cycle extraction'] },
+  { id: 189, category: 'Objects', difficulty: 'Medium', answer: 'Air Conditioner',               acceptedAnswers: ['Air Conditioner', 'AC unit'], clues: ['Cools indoor air temperature', 'Refrigerant compression expansion', 'Thermostat control setting', 'Fan circulation blower', 'Dehumidifier moisture removal'] },
+  { id: 190, category: 'Objects', difficulty: 'Medium', answer: 'Television',                    acceptedAnswers: ['Television', 'TV set'], clues: ['Cathode ray tube display', 'Liquid crystal panel', 'Plasma screen technology', 'Smart TV internet apps', 'Over the air broadcasting'] },
+  { id: 191, category: 'Objects', difficulty: 'Medium', answer: 'Camera',                        acceptedAnswers: ['Camera', 'photographic camera'], clues: ['Captures still images', 'Lens aperture shutter speed', 'Film negative digital sensor', 'Flash illumination burst', 'Mirrorless interchangeable lens'] },
+  { id: 192, category: 'Objects', difficulty: 'Medium', answer: 'Watch',                         acceptedAnswers: ['Watch', 'timepiece wrist'], clues: ['Tells time on wrist', 'Mechanical spring wound', 'Quartz crystal oscillator', 'Digital numeric display', 'Smartwatch health tracking'] },
+  { id: 193, category: 'Objects', difficulty: 'Medium', answer: 'Bicycle',                       acceptedAnswers: ['Bicycle', 'bike'], clues: ['Two wheels pedal power', 'Frame fork handlebars', 'Chain drive transmission', 'Brakes stop slow', 'Helmet protective headgear'] },
+
+  { id: 194, category: 'Objects', difficulty: 'Hard',    answer: 'Microwave Oven',                acceptedAnswers: ['Microwave Oven', 'microwave'], clues: ['Heats food with radiation', 'Magnetron generates microwaves', 'Turntable rotates food', 'Defrost setting frozen items', 'Child safety lock feature'] },
+  { id: 195, category: 'Objects', difficulty: 'Hard',    answer: 'Espresso Machine',              acceptedAnswers: ['Espresso Machine', 'espresso maker'], clues: ['Brews coffee under pressure', 'Portafilter holds grounds', 'Tamper compacts powder', 'Steam wand milk frothing', 'Boiler heating element temperature'] },
+  { id: 196, category: 'Objects', difficulty: 'Hard',    answer: 'Sewing Machine',                acceptedAnswers: ['Sewing Machine', 'sewing machine'], clues: ['Stitches fabric with needle', 'Bobbin bottom thread supply', 'Foot pedal speed control', 'Stitch types lock chain', 'Motor electric power drive'] },
+  { id: 197, category: 'Objects', difficulty: 'Hard',    answer: 'Lawn Mower',                    acceptedAnswers: ['Lawn Mower', 'lawnmower'], clues: ['Cuts grass vegetation height', 'Rotary blade spinning cuts', 'Push self-propelled types', 'Bag collects clippings', 'Electric cordless battery'] },
+  { id: 198, category: 'Objects', difficulty: 'Hard',    answer: 'Printer',                       acceptedAnswers: ['Printer', 'printing device'], clues: ['Produces hard copy documents', 'Inkjet cartridge liquid', 'Laser toner powder', 'WiFi wireless network', 'All-in-one multifunction'] },
+  { id: 199, category: 'Objects', difficulty: 'Hard',    answer: 'Camera Tripod',                 acceptedAnswers: ['Camera Tripod', 'tripod stand'], clues: ['Stabilizes camera shots', 'Three legs adjustable height', 'Quick release plate mount', 'Carbon fiber lightweight', 'Spirit level bubble indicator'] },
+  { id: 200, category: 'Objects', difficulty: 'Hard',    answer: 'Smoke Detector',                acceptedAnswers: ['Smoke Detector', 'smoke alarm'], clues: ['Detects fire smoke particles', 'Ionization photoelectric sensor', 'Battery powered wireless', 'Loud alarm siren volume', 'Interconnect wireless networking'] }
 ];

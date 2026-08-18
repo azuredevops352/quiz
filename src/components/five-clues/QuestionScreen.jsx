@@ -41,6 +41,12 @@ const QuestionScreen = ({
       setShowIncorrectFlash(true);
       const timer = setTimeout(() => setShowIncorrectFlash(false), INCORRECT_FLASH_MS);
       return () => clearTimeout(timer);
+    } else {
+      // Explicitly clear the flash when:
+      // - questionResult becomes null (new question started)
+      // - answer was correct (feedback screen shows instead)
+      // - gameStatus is not 'playing'
+      setShowIncorrectFlash(false);
     }
   }, [questionResult, gameStatus]);
 

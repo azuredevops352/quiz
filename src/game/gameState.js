@@ -1,4 +1,4 @@
-import { getRandomQuestions, isCorrectAnswer, calculateScore, getMaxGameScore } from './gameLogic.js';
+import { getRandomQuestions, isCorrectAnswer, calculateScore, getMaxGameScore, ALL_CATEGORIES, ALL_DIFFICULTIES } from './gameLogic.js';
 
 const INITIAL_STATE = {
   selectedQuestions: [],
@@ -8,12 +8,14 @@ const INITIAL_STATE = {
   gameStatus: 'start', // 'start' | 'playing' | 'feedback' | 'gameComplete'
   questionResult: null, // { correct: boolean, points: number, answer: string, isFinalClue: boolean }
   questionResults: [], // Array of { question, answer, clueSolved, points, correct }
+  selectedCategory: ALL_CATEGORIES,
+  selectedDifficulty: ALL_DIFFICULTIES,
 };
 
 function gameStateReducer(state, action) {
   switch (action.type) {
     case 'START_GAME': {
-      const questions = getRandomQuestions(action.questionBank, action.questionsPerGame);
+      const questions = getRandomQuestions(action.questionBank, action.questionsPerGame, action.selectedCategory, action.selectedDifficulty);
       return {
         ...state,
         selectedQuestions: questions,
@@ -23,6 +25,8 @@ function gameStateReducer(state, action) {
         gameStatus: 'playing',
         questionResult: null,
         questionResults: [],
+        selectedCategory: action.selectedCategory,
+        selectedDifficulty: action.selectedDifficulty,
       };
     }
 
@@ -109,7 +113,11 @@ function gameStateReducer(state, action) {
     }
 
     case 'RESET_GAME':
-      return INITIAL_STATE;
+      return {
+        ...INITIAL_STATE,
+        selectedCategory: state.selectedCategory,
+        selectedDifficulty: state.selectedDifficulty,
+      };
 
     default:
       return state;
